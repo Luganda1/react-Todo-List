@@ -1,0 +1,10 @@
+$mainGreen:rgb(41, 139, 196);
+$mainblack:rgb(5, 5, 5);
+$mainNavy:rgb(16, 49, 68);
+
+.Container{
+    width: 100vw;
+    height: 100vw;
+    background: linear-gradient(rgba(247, 244, 244, 0.4), rgba(49, 28, 28, 0.2)), url(./mountain.jpg) no-repeat bottom;
+    background-position: cover;
+}
