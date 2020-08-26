@@ -17,20 +17,20 @@ class App extends Component{
         title: 'pray'
       }
     ],
-    id: uuid(),
+    id: uuidv4(),
     item: '',
-    editItem: false
+    editItem: false 
   };
 
-  handleChange= () => {console.log('handle change')}
-  handleSubmit= () => {console.log('handle submit')}
+  handleChange= (e) => {console.log('handle change')}
+  handleSubmit= (e) => {console.log('handle submit')}
   handleDelete= (id) => {console.log(`handle delete ${id}`)}
   handleEdit= (id) => {console.log(`handle edit ${id}`)}
   clearList= () => {console.log('Clear list ')}
 
   render() {
     return (
-      <div>
+      <div> 
         <div className="Container">
           <div className="row">
             <div className="col-10 mx-auto col-md-8 mt-5">
@@ -44,7 +44,7 @@ class App extends Component{
               editItem={this.state.editItem}
               />
             <TodoList 
-              item={this.state.items}
+              items={this.state.items}
               clearList={this.clearList}
               handleDelete={this.handleDelete}
               handleEdit={this.handleEdit}
