@@ -32,9 +32,7 @@ class App extends Component{
       item:"",
       id:uuidv4(),
       editItem: false
-    },
-    () => console.log(this.state)
-    )
+    })
 
   }
   handleDelete= (id) => {console.log(`handle delete ${id}`)}
@@ -46,8 +44,8 @@ class App extends Component{
       <div> 
         <div className="Container">
           <div className="row">
-            <div className="col-10 mx-auto col-md-8 mt-5">
-              <h3 className="text-capitalise text-center">TodoInput
+            <div className="col-8 mx-auto col-md-5 mt-5">
+              <h3 className="text-capitalise text-center">Todo Input
               </h3>
             </div>
             <TodoInput 
