@@ -35,9 +35,27 @@ class App extends Component{
     })
 
   }
-  handleDelete= (id) => {console.log(`handle delete ${id}`)}
-  handleEdit= (id) => {console.log(`handle edit ${id}`)}
-  clearList= () => {console.log('Clear list ')}
+  handleDelete= (id) => {
+    const filteredList = this.state.items.filter(item => item.id !== id)
+    this.setState({
+      items: filteredList
+    })
+  }
+  handleEdit= (id) => {
+    const filteredList = this.state.items.filter(item => item.id !== id)
+    const selectedItem = this.state.items.find(item => item.id === id)
+    this.setState({
+      items: filteredList,
+      item: selectedItem.title,
+      id:id,
+      editItem: true
+    })
+  }
+  clearList= () => {
+    this.setState({
+      items:[]
+    })
+  }
 
   render() {
     return (
@@ -47,7 +65,6 @@ class App extends Component{
             <div className="col-8 mx-auto col-md-5 mt-5">
               <h3 className="text-capitalise text-center">Todo Input
               </h3>
-            </div>
             <TodoInput 
               item={this.state.item} 
               handleChange={this.handleChange} 
@@ -60,6 +77,7 @@ class App extends Component{
               handleDelete={this.handleDelete}
               handleEdit={this.handleEdit}
             />
+            </div>
           </div>
         </div>
       </div>
