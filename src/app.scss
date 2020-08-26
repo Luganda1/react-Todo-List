@@ -5,6 +5,7 @@ $mainNavy:rgb(16, 49, 68);
 .Container{
     width: 100vw;
     height: 100vw;
-    background: linear-gradient(rgba(247, 244, 244, 0.4), rgba(49, 28, 28, 0.2)), url(./mountain.jpg) no-repeat bottom;
+    background: url(./mountain.jpg) no-repeat bottom;
     background-position: cover;
 }
+//  linear-gradient(rgba(247, 244, 244, 0.4), rgba(49, 28, 28, 0.2)),

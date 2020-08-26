@@ -1,0 +1,12 @@
+h3{
+    color: azure;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    text-align: center;
+    transition: .3s all linear;
+}
+h3:hover{
+    scale: 1.2;
+    text-shadow: 2px 3px 5px rgba(19, 3, 241, 0.9);
+}
