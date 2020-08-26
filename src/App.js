@@ -7,23 +7,36 @@ import TodoList from "./components/TodoList";
 //showing vs-code github setup 
 class App extends Component{
   state={
-    items: [
-      {
-        id:1,
-        title: 'wakeup '
-      },
-      {
-        id:2,
-        title: 'pray'
-      }
-    ],
+    items: [],
     id: uuidv4(),
     item: '',
     editItem: false 
   };
 
-  handleChange= (e) => {console.log('handle change')}
-  handleSubmit= (e) => {console.log('handle submit')}
+  handleChange= (e) => {
+    this.setState({
+      item: e.target.value
+    })
+  }
+  handleSubmit= (e) => {
+    e.preventDefault();
+
+    const newItem = {
+      id:this.state.id,
+      title:this.state.item
+    }
+
+    const updateItems = [...this.state.items,newItem]
+    this.setState({
+      items:updateItems,
+      item:"",
+      id:uuidv4(),
+      editItem: false
+    },
+    () => console.log(this.state)
+    )
+
+  }
   handleDelete= (id) => {console.log(`handle delete ${id}`)}
   handleEdit= (id) => {console.log(`handle edit ${id}`)}
   clearList= () => {console.log('Clear list ')}
